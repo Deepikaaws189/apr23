@@ -1,0 +1,7 @@
+- name: variables
+  hosts: local
+  connection: local
+  tasks: #variables
+   - name: print the variables
+     ansible.builtin.debug:
+      msg: "course id devops with aws,trainer is siva and duration is 120 hrs"
