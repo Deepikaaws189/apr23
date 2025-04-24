@@ -1,0 +1,17 @@
+- name: playntask variables
+  hosts: local
+  connection: local
+  vars:
+    COURSE: "Devops with AWS"
+    TRAINER: "Siva"
+    DURATION: 120hrs
+  tasks: #playntask variables
+    - name: task level variables
+      vars:
+      COURSE: Ansible
+      ansible.builtin.debug:
+        msg: "Course is {{COURSE}},trainer is {{TRAINER}} and Duration is {{DURATION}}"
+  
+    - name: play level variables
+      ansible.builtin.debug:
+        msg: "Course is {{COURSE}},trainer is {{TRAINER}} and Duration is {{DURATION}}"
