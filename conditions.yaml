@@ -1,0 +1,14 @@
+- name: print greater value
+  hosts: local
+  connection: local
+  vars:
+    mynum: 15
+  tasks: #print greater value
+    - name: print greater value
+      ansible.builtin.debug:
+        msg: "print {{mynum}} is greater than 10"
+      when: mynum > 10
+    - name: print value
+      ansible.builtin.debug:
+        msg: "print {{mynum}} is less than 10"
+      when: mynum <= 10
