@@ -1,0 +1,20 @@
+- name: dispalay course info
+  hosts: local
+  connection: local
+#course info
+  vars:
+    COURSE: Devops
+    live: true
+    duration: 120
+    topics:
+    - linux
+    - shell
+    - ansible
+    tools:
+      ci: jenkins
+      cloud: aws
+      containerization: docker
+  tasks:
+    - name: print course info
+      ansible.builtin.debug:
+        msg: "course name is {{COURSE}} and is it live {{live}},topics covered are {{topics}} and tools discussed are {{tools}}"
